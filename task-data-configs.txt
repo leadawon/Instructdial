@@ -1,0 +1,12 @@
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_seqfile.json
+{"question_generation": 1}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_seqfile.json
+{"question_generation": 200}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_test.json
+{"question_generation": 20}
+
