@@ -52,6 +52,8 @@ from seq2seq_trainer import CustomSeq2SeqTrainer
 from eval_scripts.generation_metrics import nlgeval_metrics
 # os.environ["MASTER_PORT"] = str(10999 +random.randint(1, 999))
 
+
+
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
 # check_min_version("4.16.0.dev0")
 
@@ -589,11 +591,14 @@ def main():
         
         # input_ids = input_ids.cpu()
         input_ids = np.where(input_ids != -100, input_ids, tokenizer.pad_token_id)
+        input_ids[input_ids==-100] = 1
+        preds[preds==-100] = 1
         decoded_inputs = tokenizer.batch_decode(input_ids, skip_special_tokens=True)
         decoded_preds = tokenizer.batch_decode(preds, skip_special_tokens=True)
         if data_args.ignore_pad_token_for_loss:
             # Replace -100 in the labels as we can't decode them.
             labels = np.where(labels != -100, labels, tokenizer.pad_token_id)
+        labels[labels==-100] = 1   
         decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
 
         # Some simple post-processing

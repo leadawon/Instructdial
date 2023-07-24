@@ -28,7 +28,7 @@ from data_utils import goemotions_reader, cider_reader, tod_reader, opendialkg_r
 from data_utils import toxichat_reader, bad_reader, buildbreakfix_reader, saferdialogues_reader, gensf_reader
 from data_utils import kvret_reader, camrest676_reader, frames_reader, schemaguided_reader
 from data_utils import wozdst_reader, msre2edst_reader, taskmasterdst_reader, multiwozdst_reader
-
+from data_utils import dawon_reader
 
 def get_reader(args, dataset):
     # Data readers
@@ -120,6 +120,8 @@ def get_reader(args, dataset):
 
     if dataset == 'coqa': #coqa 데이터셋이 객체에 저장됨. dataset_reader.examples가 객체를 담아두는 곳임., split에 따라서 파일을 찾아간다.
         dataset_reader = cqa_reader.CQADataset(settings.COQA_PATH, 'coqa', split=datasetconfig['split'])
+    if dataset == 'dawon': #dawon 데이터셋이 객체에 저장됨. dataset_reader.examples가 객체를 담아두는 곳임., split에 따라서 파일을 찾아간다.
+        dataset_reader = dawon_reader.dawonDataset(settings.DAWON_PATH, 'dawon', split=datasetconfig['split'])
     if dataset == 'quac':
         dataset_reader = cqa_reader.CQADataset(settings.QUAC_PATH, 'quac', split=datasetconfig['split'])
     if dataset == 'qaconv':

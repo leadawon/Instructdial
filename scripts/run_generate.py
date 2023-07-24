@@ -154,6 +154,7 @@ def run_generation(args):
                 outfile.flush()
         args.batch_size -= 10
         batch_chunks_sample = chunks(sample_decode_data, args.batch_size)
+        
         for b, batch in tqdm(enumerate(batch_chunks_sample), total=len(sample_decode_data)//args.batch_size):
             outputs = get_outputs_bytype(args, model, tokenizer, batch, decoding_type='sample')
             for d, dp in enumerate(batch):

@@ -37,13 +37,14 @@ def get_instructions(instruction_files):
 
     allinstruction_files = [f for f in listdir(instruction_folder) if isfile(join(instruction_folder, f))]
     allinstruction_files = [x.replace('.py', '') for x in allinstruction_files] #instruction files 에 있는 .py파일 의 prefix를 리스트에 저장한다.
-
+    
     useful_files = []
     for filename in instruction_files: #사용자가 원하는 인스트럭션을 꺼낸다.
         for fname in allinstruction_files: #존재하는 모든 인스트럭션을 꺼낸다.
             if filename == fname and not any(c in fname for c in ['swo', 'swp']):
                 useful_files.append(fname) # instruction_files폴더에 있는 .py파일중 쓸만한거를 useful_files에 저장한다.
     print('useful_files for instructions', useful_files)
+    
     instructions_modules = []
     for fname in useful_files:
         # if '.py' not in fname: continue
@@ -139,8 +140,8 @@ def test_instructions(args):
         print("The new output directory is created!")   
     taskconfig = config.get(task, None) #question generation 의 값으로 접근
     if taskconfig is not None: #우리가 할 수 있는 task라면?
-        instruction_files = taskconfig.get('instruction_files', []) # question generation이 들어있는 리스트를 받는다.
-        datasets = taskconfig.get('datasets', []) #dataset에 대한 정보도 받는다.
+        instruction_files = taskconfig.get('instruction_files', []) # question generation이 들어있는 리스트를 받는다. --> dawon
+        datasets = taskconfig.get('datasets', []) #dataset에 대한 정보도 받는다. --> dawon
         taskconfig['task_name'] = task
 
     else:
