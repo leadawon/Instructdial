@@ -4,8 +4,8 @@ deepspeed ./run_train.py \
     --model_name_or_path yuchenlin/BART0pp \
     --do_train \
     --do_eval \
-    --train_file text2textfiles/leavetasks/traindata.json \
-    --validation_file text2textfiles/leavetasks/valid.json \
+    --train_file text2textfiles/dawon_train.json \
+    --validation_file text2textfiles/dawon_test.json \
     --text_column prompt \
     --target_column output \
     --output_dir ./tmp/outmodel_m1 \

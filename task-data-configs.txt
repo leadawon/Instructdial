@@ -10,3 +10,35 @@ out:scripts/text2textfiles/dawon_seqfile.json
 out:scripts/text2textfiles/dawon_test.json
 {"question_generation": 20}
 
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_train.json
+{"question_generation": 180}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_train.json
+{"question_generation": 180}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_train.json
+{"question_generation": 180}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_train.json
+{"question_generation": 180}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_test.json
+{"question_generation": 20}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_test.json
+{"question_generation": 20}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_train.json
+{"question_generation": 20}
+
+{"task-files": ["question_generation"]}
+out:scripts/text2textfiles/dawon_test.json
+{"question_generation": 20}
+

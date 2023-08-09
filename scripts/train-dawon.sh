@@ -5,10 +5,10 @@ deepspeed --include localhost:0,1,2,3,5,6,7 ./run_train.py \
     --do_train \
     --do_eval \
     --train_file text2textfiles/dawon_train.json \
-    --validation_file text2textfiles/dawon_valid.json \
+    --validation_file text2textfiles/dawon_test.json \
     --text_column prompt \
     --target_column output \
-    --output_dir ./tmp/tunedmodel_m1 \
+    --output_dir ./tmp/outmodel_m1 \
     --per_device_train_batch_size=3 \
     --per_device_eval_batch_size=3 \
     --gradient_accumulation_steps 12 \

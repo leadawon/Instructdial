@@ -234,6 +234,7 @@ class CustomSeq2SeqTrainer(Seq2SeqTrainer):
 
         # Metrics!
         if self.compute_metrics is not None and all_preds is not None and all_labels is not None:
+            
             metrics = self.compute_metrics(EvalPrediction(predictions=all_preds, label_ids=all_labels), all_inputs, self.state.global_step)
         else:
             metrics = {}
